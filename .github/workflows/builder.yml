@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     env:
-      ARTIFACTS_DIR: '/home/runner/work/DevOps_first_lab/DevOps_first_lab/dist'
+      ARTIFACTS_DIR: '/home/runner/work/DevOps_first_lab/DevOps_first_lab/dist/main.exe'
 
     runs-on: ubuntu-latest
 
