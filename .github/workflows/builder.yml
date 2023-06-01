@@ -36,7 +36,8 @@ jobs:
         run: |
           cd dist
           chmod +x main
-          ./main https://www.youtube.com/watch?v=vx2u5uUu3DE
+          ./main 
+          echo "https://www.youtube.com/watch?v=vx2u5uUu3DE"
 
       - name: Check audio
         run: |
