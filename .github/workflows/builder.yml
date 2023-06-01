@@ -37,9 +37,10 @@ jobs:
         run: |
           cd dist
           pwd
+          ls -la
           
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: "$ARTIFACTS_DIR"
+          path: "$ARTIFACTS_DIR/main.exe"
