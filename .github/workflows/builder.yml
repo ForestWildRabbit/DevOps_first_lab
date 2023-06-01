@@ -34,7 +34,7 @@ jobs:
           pyinstaller -F main.py
           
       - name: Upload a Build Artifact
-      - uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: my-artifact
           path: dict/main.exe
