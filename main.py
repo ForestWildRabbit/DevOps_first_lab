@@ -12,7 +12,8 @@ def main():
         application_path = os.path.dirname(__file__)
 
 
-    link = input("Enter YOUTUBE link with a video: ")
+    link = "https://www.youtube.com/watch?v=vx2u5uUu3DE"
+
     try:
         youtube = YouTube(link)
         title = youtube.title.replace("/", "")

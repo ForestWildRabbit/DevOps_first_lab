@@ -10,7 +10,8 @@ on:
 jobs:
   build:
     env:
-      ARTIFACTS_DIR: '/home/runner/work/DevOps_first_lab/DevOps_first_lab/dist/'
+      EXE_ARTIFACTS_DIR: '/home/runner/work/DevOps_first_lab/DevOps_first_lab/dist/'
+
 
     runs-on: ubuntu-latest
 
@@ -31,9 +32,29 @@ jobs:
       - name: Build
         run: |
           pyinstaller -F main.py
+          
 
-      - name: Upload a Build Artifact
+      - name: Run exe
+        run: |
+          cd dist
+          chmod +x main
+          ./main 
+
+      - name: Check audio
+        run: |
+          ls -la
+
+      - name: Upload a Build Artifact executable
         uses: actions/upload-artifact@v3
         with:
-          name: my-artifact
-          path: ${{env.ARTIFACTS_DIR}}
+          name: executable-artifact
+          path: ${{env.EXE_ARTIFACTS_DIR}}
+          retention-days: 1
+
+
+      - name: Upload a Build Artifact executable
+        uses: actions/upload-artifact@v3
+        with:
+          name: python-script
+          path: main.py
+          retention-days: 1
