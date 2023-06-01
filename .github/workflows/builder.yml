@@ -35,7 +35,7 @@ jobs:
 
       - name: Show files
         run: |
-          cd dict
+          cd dist
           pwd
           
       - name: Upload a Build Artifact
