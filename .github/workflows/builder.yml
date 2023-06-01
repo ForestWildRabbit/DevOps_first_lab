@@ -8,7 +8,7 @@ on:
 
 
 env:
-  ARTIFACTS_DIR: /home/runner/work/DevOps_first_lab/DevOps_first_lab/dist
+  ARTIFACTS_DIR: '/home/runner/work/DevOps_first_lab/DevOps_first_lab/dist'
 
 
 jobs:
@@ -43,4 +43,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: "$ARTIFACTS_DIR/main.exe"
+          path: $ARTIFACTS_DIR
