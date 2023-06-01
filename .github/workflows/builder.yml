@@ -32,6 +32,10 @@ jobs:
       - name: Build
         run: |
           pyinstaller -F main.py
+
+      - name: Show files
+        run: |
+          ls -la
           
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
