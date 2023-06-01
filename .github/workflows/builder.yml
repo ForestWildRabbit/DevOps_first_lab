@@ -35,14 +35,14 @@ jobs:
       - name: Run
         run: |
           cd dist
-          ./main
-          https://www.youtube.com/watch?v=vx2u5uUu3DE
+          chmod +x main
+          ./main https://www.youtube.com/watch?v=vx2u5uUu3DE
 
       - name: Check audio
         run: |
           ls -la
           
-          
+
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
         with:
