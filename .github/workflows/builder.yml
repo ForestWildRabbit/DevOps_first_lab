@@ -42,6 +42,8 @@ jobs:
 
       - name: Check audio
         run: |
+          cd dist
+          cd audiofiles
           ls -la
 
       - name: Upload a Build Artifact executable
@@ -52,9 +54,4 @@ jobs:
           retention-days: 1
 
 
-      - name: Upload a Build Artifact executable
-        uses: actions/upload-artifact@v3
-        with:
-          name: python-script
-          path: main.py
-          retention-days: 1
+      
