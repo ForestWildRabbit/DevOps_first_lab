@@ -32,3 +32,10 @@ jobs:
       - name: Build
         run: |
           pyinstaller -F main.py
+          
+      - name: Upload a Build Artifact
+        uses: actions/upload-arfifact@v3.1.2
+        with:
+          name: python_app
+          path: dict/main.exe
+          retention-days: 1
