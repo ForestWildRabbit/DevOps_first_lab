@@ -8,7 +8,7 @@ on:
 
 
 env:
-  DEVOPS_DIR: python_project
+  ARTIFACTS_DIR: /home/runner/work/DevOps_first_lab/DevOps_first_lab/dist
 
 
 jobs:
@@ -42,4 +42,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: ./dict/main.exe
+          path: "$ARTIFACTS_DIR"
