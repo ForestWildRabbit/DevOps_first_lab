@@ -38,7 +38,7 @@ jobs:
         run: |
           cd dist
           chmod +x main
-          ./main 
+          ./main https://www.youtube.com/watch?v=vx2u5uUu3DE
 
       - name: Check audio
         run: |
@@ -54,4 +54,4 @@ jobs:
           retention-days: 1
 
 
-      
+

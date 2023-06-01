@@ -4,15 +4,19 @@ import sys
 
 
 def main():
+    length_of_parameters = len(sys.argv)
+    if length_of_parameters == 1:
+        print("Enter a link to youtube video after this script name")
+        return 1
+
+    link = sys.argv[1]
+
     application_path = ""
 
     if getattr(sys, 'frozen', False):
         application_path = os.path.dirname(sys.executable)
     elif __file__:
         application_path = os.path.dirname(__file__)
-
-
-    link = "https://www.youtube.com/watch?v=vx2u5uUu3DE"
 
     try:
         youtube = YouTube(link)
