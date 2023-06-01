@@ -35,7 +35,8 @@ jobs:
 
       - name: Show files
         run: |
-          ls -la
+          cd ./dict
+          pwd
           
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3
