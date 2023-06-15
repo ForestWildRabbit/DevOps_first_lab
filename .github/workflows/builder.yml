@@ -49,18 +49,18 @@ jobs:
           path: ${{env.EXE_ARTIFACTS_DIR}}
           retention-days: 1
 
-      - uses: actions/checkout@v1
-      - name: Build and Push a docker image
-        run: |
-          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{env.DOCKER_USERNAME}}" --password-stdin
-          docker image build -t "${{env.DOCKER_TAG}}" .
-          docker push "${{env.DOCKER_TAG}}"
-
       - name: Check audio
         run: |
           cd dist
           cd audiofiles
           ls -lha
+
+      - uses: actions/checkout@v2
+      - name: Build and Push a docker image
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{env.DOCKER_USERNAME}}" --password-stdin
+          docker image build -t "${{env.DOCKER_TAG}}" .
+          docker push "${{env.DOCKER_TAG}}"
 
       
 
