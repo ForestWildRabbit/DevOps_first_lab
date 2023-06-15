@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-COPY dist .
+COPY . .
 
 ENV LINK_ENV="${LINK_ENV}"
 
