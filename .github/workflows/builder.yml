@@ -12,7 +12,8 @@ jobs:
     env:
       EXE_ARTIFACTS_DIR: '/home/runner/work/DevOps_first_lab/DevOps_first_lab/dist/'
       LINK: 'https://www.youtube.com/watch?v=vx2u5uUu3DE'
-
+      DOCKER_USERNAME: 'forestwildrabbit'
+      DOCKER_TAG: 'forestwildrabbit/devops_lab:v1'
 
     runs-on: ubuntu-latest
 
@@ -48,11 +49,19 @@ jobs:
           path: ${{env.EXE_ARTIFACTS_DIR}}
           retention-days: 1
 
+      - name: Build and Push a docker image
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{env.DOCKER_USERNAME}}" --password-stdin
+          docker image build -t "${{env.DOCKER_TAG}}" .
+          docker push "${{env.DOCKER_TAG}}"
+
       - name: Check audio
         run: |
           cd dist
           cd audiofiles
           ls -lha
+
+      
 
       
 
