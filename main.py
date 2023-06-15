@@ -29,7 +29,7 @@ def main():
         youtube.streams.get_audio_only().download(output_path=output_path, filename=f"{title}.mp3")
         print(f"Successfully loaded to {output_path}/{title}.mp3")
     except exceptions.RegexMatchError:
-        print("You entered an invalid url.")
+        print(f"You entered an invalid url \'{link}\'.")
 
     return 0
 
