@@ -1,7 +1,10 @@
-FROM ubuntu:latest
+FROM python:3.10
 
 COPY . .
 
-ENV LINK_ENV="${LINK_ENV}"
+ENV LINK="${LINK}"
 
-CMD ["./dist/main.exe", "$LINK_ENV"]
+RUN pip install -r requirements.txt
+
+CMD ["python", "./main.py", "$LINK"]
+
