@@ -31,7 +31,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Build
+      - name: Build an executable
         run: |
           pyinstaller -F main.py
           
@@ -49,6 +49,7 @@ jobs:
           path: ${{env.EXE_ARTIFACTS_DIR}}
           retention-days: 1
 
+      - uses: actions/checkout@v1
       - name: Build and Push a docker image
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{env.DOCKER_USERNAME}}" --password-stdin
