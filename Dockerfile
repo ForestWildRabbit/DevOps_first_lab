@@ -2,10 +2,12 @@ FROM python:3.10
 
 ENV LINK="${LINK}"
 
-COPY requirements.txt .
-COPY main.py .
+WORKDIR /usr/src/app
 
-RUN pip install -r requirements.txt
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY main.py .
 
 CMD ["python", "./main.py", "$LINK"]
 

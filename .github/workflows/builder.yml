@@ -55,7 +55,6 @@ jobs:
           cd audiofiles
           ls -lha
 
-      - uses: actions/checkout@v2
       - name: Build and Push a docker image
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{env.DOCKER_USERNAME}}" --password-stdin
